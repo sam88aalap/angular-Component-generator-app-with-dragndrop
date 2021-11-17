@@ -1,0 +1,81 @@
+<!-- <div class="options-container" *ngIf="field!=undefined" @slideInOut>
+  <a class="close-button" (click)="closeEditor()">x</a>
+  <h3 class="text-center m-t-10 h-white-border">Attribute Editor : {{fieldType[field.type]}}</h3>
+
+  <div *ngIf="field.type == fieldType.Input" class="">
+      <mat-form-field class="full-width">
+          <mat-label>Placeholder</mat-label>
+          <input matInput [(ngModel)]="field.label">
+      </mat-form-field>
+      <hr>
+  </div>
+  <div *ngIf="field.type == fieldType.Checkbox" class="">
+      <mat-form-field class="full-width">
+          <mat-label>Label</mat-label>
+          <input matInput [(ngModel)]="field.label">
+      </mat-form-field>
+      <hr>
+      <div>
+          <mat-slide-toggle style="font-size: 15px;" [(ngModel)]="field.state!.checkbox.IsChecked"
+              color="warm"> Default Selection :
+              {{field.state!.checkbox.IsChecked}}</mat-slide-toggle>
+
+      </div>
+  </div>
+  <div *ngIf="field.type == fieldType.Radiogroup" class="">
+      <mat-form-field class="full-width">
+          <mat-label>Title</mat-label>
+          <input matInput [(ngModel)]="field.label">
+      </mat-form-field>
+      <hr>
+      <div cdkDragLockAxis="y" class="radiobox-list" (cdkDropListDropped)="dropToBox($event)" cdkDropList
+          [cdkDropListData]="field.state!.radiogroup!.options">
+          <div class="radiobox-main" cdkDragBoundary=".radiobox-list"
+              *ngFor="let item of field.state?.radiogroup?.options;let i=index" cdkDrag>
+              <div class="radiobox-custom-placeholder" *cdkDragPlaceholder></div>
+              <span class="number-span">{{i+1}}.</span>
+              <input [(ngModel)]="item.Label" class="radiogroup-main-input">
+              <button class="radiogroup-main-button " mat-mini-fab color="accent" (click)="removeRadiocheckbox(item)"
+                  aria-label="Example icon button with a plus one icon">-</button>
+              <button (click)="addRadiocheckbox(i)" class="radiogroup-main-button " mat-mini-fab color="accent"
+                  aria-label="Example icon button with a plus one icon">+</button>
+              <button cdkDragHandle class="radiogroup-main-button " style="cursor: grab;" mat-icon-button
+                  color="white" aria-label="Example icon button with a menu icon">
+                  <mat-icon>menu</mat-icon>
+              </button>
+          </div>
+      </div>
+      <hr>
+  </div>
+  <div *ngIf="field.type == fieldType.Dropdown">
+      <mat-form-field class="full-width">
+          <mat-label>Title</mat-label>
+          <input matInput [(ngModel)]="field.label">
+      </mat-form-field>
+      <mat-form-field class="full-width">
+          <mat-label>Placeholder</mat-label>
+          <input matInput [(ngModel)]="field.state?.dropdown!.Placeholder">
+      </mat-form-field>
+      <hr>
+      <div cdkDragLockAxis="y" class="radiobox-list" (cdkDropListDropped)="dropToBox($event)" cdkDropList
+          [cdkDropListData]="field.state!.dropdown!.options">
+          <div class="radiobox-main" cdkDragBoundary=".radiobox-list" cdkDrag
+              *ngFor="let item of field.state?.dropdown!.options;let i=index">
+              <div class="radiobox-custom-placeholder" *cdkDragPlaceholder></div>
+              <span class="number-span">{{i+1}}.</span>
+              <input [(ngModel)]="item.Label" class="radiogroup-main-input">
+              <button class="radiogroup-main-button" mat-mini-fab color="accent">-</button>
+              <button class="radiogroup-main-button" (click)="addDropboxItem(i)" mat-mini-fab
+                  color="accent">+</button>
+              <button class="radiogroup-main-button" (click)="removeDropboxItem(item)"
+                  style="cursor: grab;" mat-icon-button color="white"
+                  aria-label="Example icon button with a menu icon" cdkDragHandle>
+                  <mat-icon>menu</mat-icon>
+              </button>
+          </div>
+      </div>
+  </div>
+  <div>
+      <button mat-stroked-button  class="btn-block dark-button" (click)="deleteField()">Remove Field</button>
+  </div>
+</div> -->

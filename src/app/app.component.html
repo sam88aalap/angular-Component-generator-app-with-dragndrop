@@ -1,0 +1,40 @@
+<div class="example-container">
+  <div class=left-box>
+  <h2>Select Component</h2>
+
+  <div id="left-box" cdkDropList [cdkDropListData]="Labels"
+  cdkDropListConnectedTo="right-box" class="example-list"
+  cdkDropDisabled cdkDropListSortingDisabled
+  (cdkDropListDropped)="dropToBox($event)">
+    <div
+      class="example-box"
+      [cdkDragData]="field" (cdkDragEnded)="dragEnded($event)"
+      *ngFor="let field of Labels"
+      [cdkDragData]="field"
+      cdkDrag><div class="example-custom-placeholder" *cdkDragPlaceholder></div>
+      <span class="text-center">{{field.label}}</span></div>
+  </div>
+</div>
+</div>
+
+<div class='right-box'>
+  <div class="right-example">
+    <div class='right-container'>
+    <h2>Drop Item</h2>
+
+    <div
+      id="right-box"
+      cdkDropList
+      [cdkDropListData]="dropedLabels"
+      cdkDropListConnectedTo="Labels"
+      class="editable-list"
+      (cdkDropListDropped)="dropToFields($event)">
+      <div style="width: 100%;" cdkDragBoundary=".right-container" *ngFor="let item of dropedLabels" [cdkDragData]="item" cdkDrag>
+        <div class="example-custom-placeholder" *cdkDragPlaceholder></div>
+        <app-dropbox [FieldValue]="item" (onSelect)="fieldSelected($event)"></app-dropbox>
+      </div>
+    </div>
+      <!-- <fe  [Field]="selectedField" (removeField)="DeleteField($event)" (closeBox)="closeAttributeBox($event)"></fe> -->
+  </div>
+</div>
+
